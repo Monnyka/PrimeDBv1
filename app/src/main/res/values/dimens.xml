@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="textExtraLarge">36sp</dimen>
+    <dimen name="textLarge">24sp</dimen>
+    <dimen name="textBig">20sp</dimen>
+    <dimen name="textNormal">18sp</dimen>
+    <dimen name="textSmall">14sp</dimen>
+    <dimen name="textTiny">12sp</dimen>
+    <item name="text_view_padding" type="integer">100</item>
+</resources>
