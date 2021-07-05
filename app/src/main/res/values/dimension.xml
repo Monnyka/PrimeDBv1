@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    //Spacing
+    <dimen name="edge_spacing">15dp</dimen>
+    <dimen name="content_spacing">35dp</dimen>
+    <dimen name="subtext_spacing">20dp</dimen>
+    <dimen name="view_topdown_spacing">20dp</dimen>
+    <dimen name="margin_edge">25dp</dimen>
+
+
+    //Text Size
+    <dimen name="big_text">28sp</dimen>
+    <dimen name="title_size">18sp</dimen>
+    <dimen name="subtext_size">14sp</dimen>
+    <dimen name="des_size">12sp</dimen>
+    <dimen name="space_text">8sp</dimen>
+
+
+    //Color
+
+
+</resources>

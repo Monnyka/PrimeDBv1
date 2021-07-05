@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/rtl_poster"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_btn"
+        >
+    <ImageView
+        android:id="@+id/movie_poster"
+        android:layout_width="match_parent"
+        android:layout_height="175dp"
+        />
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/movie_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Wonder\nWoman 1984"
+        android:fontFamily="@font/pd_bold"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:layout_below="@id/rtl_poster"
+        android:layout_marginTop="@dimen/subtext_size"
+        />
+
+    <TextView
+        android:id="@+id/movie_year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/movie_title"
+        android:fontFamily="@font/pd_bold"
+        tools:text="2020"
+        android:textColor="@color/app_gray"
+        android:layout_marginTop="@dimen/space_text"
+        />
+
+
+
+</RelativeLayout>

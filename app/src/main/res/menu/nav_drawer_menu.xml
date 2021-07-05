@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item android:id="@+id/miItem1"
+        android:title="@string/profile"/>
+    <item android:id="@+id/miItem3"
+        android:title="@string/Search"/>
+    <item android:id="@+id/miItem2"
+        android:title="@string/List"/>
+    <item android:id="@+id/miItem4"
+        android:title="@string/Watchlist"/>
+    <item android:id="@+id/miItem5"
+        android:title="@string/Upcoming"/>
+    <item android:id="@+id/miItem6"
+        android:title="@string/Settings"/>
+    <item android:id="@+id/miItem7"
+        android:title="@string/Log_Out"/>
+</menu>

@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name='PrimeDB'
+rootProject.name = "PrimeDB"
