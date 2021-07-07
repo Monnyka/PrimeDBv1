@@ -16,5 +16,6 @@
     <color name="colorPrimary">#9BA5FF</color>
     <color name="colorPrimaryDark">#9BA5FF</color>
     <color name="colorAccent">#9A9A9A</color>
+    <color name="colorPanel">#9DA7BB</color>
 
 </resources>

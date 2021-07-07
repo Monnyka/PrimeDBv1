@@ -38,4 +38,8 @@
     <string name="imageview_backdrop">imageview_backdrop</string>
     <string name="release">Release:</string>
     <string name="duration">Duration:</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="your_snapshot">Your Snapshot</string>
+    <string name="watching_tonight">Watching Tonight</string>
+    <string name="top_pick_for_you">Top pick for you</string>
 </resources>
