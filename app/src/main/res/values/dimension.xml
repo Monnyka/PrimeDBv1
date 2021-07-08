@@ -15,8 +15,12 @@
     <dimen name="des_size">12sp</dimen>
     <dimen name="space_text">8sp</dimen>
 
+    //tablet
+    <dimen name="tb_title_text">48sp</dimen>
+    <dimen name="tb_subtitle_text">28sp</dimen>
+    <dimen name="tb_normal_text">18sp</dimen>
+    <dimen name="tb_small_text">14sp</dimen>
 
-    //Color
 
 
 </resources>
