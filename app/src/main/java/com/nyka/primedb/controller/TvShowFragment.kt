@@ -1,4 +1,4 @@
-package com.nyka.primedb.ui
+package com.nyka.primedb.controller
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

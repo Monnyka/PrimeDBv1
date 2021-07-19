@@ -6,10 +6,10 @@ import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.fragment.app.Fragment
 import com.nyka.primedb.databinding.ActivityMainBinding
-import com.nyka.primedb.ui.MovieFragment
-import com.nyka.primedb.ui.NewsFragment
-import com.nyka.primedb.ui.SettingsFragment
-import com.nyka.primedb.ui.TvShowFragment
+import com.nyka.primedb.controller.MovieFragment
+import com.nyka.primedb.controller.NewsFragment
+import com.nyka.primedb.controller.SettingsFragment
+import com.nyka.primedb.controller.TvShowFragment
 
 class MainActivity : BaseClass() {
     private lateinit var binding: ActivityMainBinding

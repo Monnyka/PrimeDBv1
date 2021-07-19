@@ -43,4 +43,5 @@
     <string name="watching_tonight">Watching Tonight</string>
     <string name="top_pick_for_you">Top pick for you</string>
     <string name="there_is_no_connection">There is no connection</string>
+    <string name="movie_poster">Movie Poster</string>
 </resources>

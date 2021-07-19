@@ -6,7 +6,7 @@
     app:startDestination="@id/movieFragment2">
     <fragment
         android:id="@+id/movieFragment2"
-        android:name="com.nyka.primedb.ui.MovieFragment"
+        android:name="com.nyka.primedb.controller.MovieFragment"
         android:label="fragment_movie"
         tools:layout="@layout/fragment_movie" />
 </navigation>
