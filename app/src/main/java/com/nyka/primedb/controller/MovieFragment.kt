@@ -16,6 +16,7 @@ import com.nyka.primedb.adaper.TrendingMovieAdapter
 import com.nyka.primedb.databinding.FragmentMovieBinding
 import com.nyka.primedb.model.TrendingMovie
 import com.nyka.primedb.network.RetrofitInstance
+import com.nyka.primedb.utils.Constants.Companion.api_key
 import retrofit2.HttpException
 import java.lang.Exception
 
@@ -45,18 +46,13 @@ class MovieFragment:Fragment(R.layout.fragment_movie) {
 
 //        val trendingMovie = mutableListOf<TrendingMovie>(
 //            TrendingMovie("1","Black Widow","2021","https://image.tmdb.org/t/p/original/kAY8htLwxylV79IhkVilbiDYybQ.jpg"),
-//            TrendingMovie("2","F9","2023","https://image.tmdb.org/t/p/original/kAY8htLwxylV79IhkVilbiDYybQ.jpg"),
-//            TrendingMovie("3","Luca","2024","https://www.themoviedb.org/t/p/original/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg"),
-//            TrendingMovie("4","Avengers: End Game","2061","https://www.themoviedb.org/t/p/original/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg"),
-//            TrendingMovie("1","Black Widow","2021","https://www.themoviedb.org/t/p/original/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg"),
-//            TrendingMovie("2","F9","2023","https://www.themoviedb.org/t/p/original/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg"),
-//            TrendingMovie("3","Luca","2024","https://www.themoviedb.org/t/p/original/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg"),
 //            TrendingMovie("4","Avengers: End Game","2061","https://www.themoviedb.org/t/p/original/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg")
 //        )
 
         lifecycleScope.launchWhenCreated {
             val response = try {
-                RetrofitInstance.api.getMovie("1469231605651a4f67245e5257160b5f")
+                RetrofitInstance.api.getMovie(3, api_key)
+
                 }catch (e: Exception){
                     Log.d(TAG, "IOException: You might not have internet connection $e")
                     return@launchWhenCreated
@@ -66,17 +62,15 @@ class MovieFragment:Fragment(R.layout.fragment_movie) {
                 }
 
             if(response.isSuccessful && response.body()!=null){
-                print(response)
-                val adapter = TrendingMovieAdapter(response.body()!!)
-                binding.rvTrendingMovie.adapter = adapter
-                binding.rvTrendingMovie.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+                binding.rvTrendingMovie.apply {
+                    adapter = TrendingMovieAdapter(response.body()!!)
+                    layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+                }
+
             }else{
                 Log.e(TAG, "Response not successful")
             }
-
         }
-
-
 
     }
 }
