@@ -44,4 +44,12 @@
     <string name="top_pick_for_you">Top pick for you</string>
     <string name="there_is_no_connection">There is no connection</string>
     <string name="movie_poster">Movie Poster</string>
+    <string name="icon_drama">Icon Drama</string>
+    <string name="revenue">Revenue:</string>
+    <string name="title">Title</string>
+    <string name="tagline">Tagline</string>
+    <string name="poster">Poster</string>
+    <string name="synopsis">Synopsis</string>
+    <string name="director">Director</string>
+    <string name="cast">Cast</string>
 </resources>

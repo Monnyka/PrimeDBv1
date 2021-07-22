@@ -10,6 +10,7 @@ import com.bumptech.glide.Glide
 import com.nyka.primedb.MovieDetailActivity
 import com.nyka.primedb.R
 import com.nyka.primedb.model.TrendingMovie
+import com.nyka.primedb.utils.Constants.Companion.posterPath
 
 class TrendingMovieAdapter(private var trendingMovie: TrendingMovie) : RecyclerView.Adapter<TrendingMovieAdapter.TrendingMovieHolder>(){
 
@@ -23,11 +24,12 @@ class TrendingMovieAdapter(private var trendingMovie: TrendingMovie) : RecyclerV
     override fun onBindViewHolder(holder: TrendingMovieHolder, position: Int) {
         holder.itemView.findViewById<TextView>(R.id.tv_title).text = trendingMovie.results[position].title
         holder.itemView.findViewById<TextView>(R.id.tv_year).text = trendingMovie.results[position].release_date
-        val imageUrl ="https://image.tmdb.org/t/p/w500${trendingMovie.results[position].poster_path}"
+        val imageUrl = posterPath + trendingMovie.results[position].poster_path
         Glide.with(holder.itemView.context).load(imageUrl).into(holder.itemView.findViewById(R.id.iv_poster))
 
         holder.itemView.setOnClickListener(){
             Intent(holder.itemView.context, MovieDetailActivity::class.java).also {
+                it.putExtra("movie_id", trendingMovie.results[position].id.toString())
                 holder.itemView.context.startActivities(arrayOf(it))
             }
         }

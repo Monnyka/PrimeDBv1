@@ -13,13 +13,14 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingBottom="20dp"
+            >
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline3"
@@ -249,7 +250,8 @@
                     android:src="@drawable/ic_drama"
                     app:layout_constraintBottom_toTopOf="@+id/guideline7"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/guideline7" />
+                    app:layout_constraintTop_toTopOf="@+id/guideline7"
+                    android:contentDescription="@string/icon_drama" />
 
                 <TextView
                     android:id="@+id/textView22"

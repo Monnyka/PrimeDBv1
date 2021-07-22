@@ -13,14 +13,14 @@ import com.nyka.primedb.controller.TvShowFragment
 
 class MainActivity : BaseClass() {
     private lateinit var binding: ActivityMainBinding
-    lateinit var toggle: ActionBarDrawerToggle
+    private lateinit var toggle: ActionBarDrawerToggle
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
 
         supportFragmentManager.beginTransaction().replace(R.id.fragment_container, MovieFragment()).commit()
         val movieFragment = MovieFragment()
-        val tvShowFragment = TvShowFragment()
+//        val tvShowFragment = TvShowFragment()
         val newsFragment = NewsFragment()
         val settingsFragment = SettingsFragment()
         toggle = ActionBarDrawerToggle(this, binding.mdrawerLayout, R.string.open, R.string.close)
@@ -28,7 +28,7 @@ class MainActivity : BaseClass() {
         binding.bottomNavigation.setOnNavigationItemSelectedListener{
             when(it.itemId){
                 R.id.nav_movie -> makeFragment(movieFragment)
-                R.id.nav_tv -> makeFragment(tvShowFragment)
+//                R.id.nav_tv -> makeFragment(tvShowFragment)
                 R.id.nav_news -> makeFragment(newsFragment)
                 R.id.nav_settings -> makeFragment(settingsFragment)
             }

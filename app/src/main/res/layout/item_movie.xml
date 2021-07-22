@@ -16,13 +16,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         >
-
-        <ImageView
-            android:id="@+id/iv_poster"
+        <androidx.cardview.widget.CardView
             android:layout_width="100dp"
             android:layout_height="175dp"
-            android:scaleType="centerCrop"
-            android:contentDescription="@string/movie_poster" />
+            app:cardCornerRadius="10dp"
+            >
+                <ImageView
+                    android:id="@+id/iv_poster"
+                    android:layout_width="100dp"
+                    android:layout_height="175dp"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="@string/movie_poster" />
+        </androidx.cardview.widget.CardView>
     </RelativeLayout>
 
     <TextView
