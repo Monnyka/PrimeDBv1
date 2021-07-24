@@ -52,4 +52,7 @@
     <string name="synopsis">Synopsis</string>
     <string name="director">Director</string>
     <string name="cast">Cast</string>
+    <string name="genre">Genre:</string>
+    <string name="production_company">Production Company</string>
+    <string name="production_logo">Production Logo</string>
 </resources>

@@ -7,7 +7,18 @@
     android:background="@color/app_background"
     tools:context=".MovieDetailActivity">
 
+    <ProgressBar
+        android:id="@+id/pbLoading"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
     <ScrollView
+        android:id="@+id/svMain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -15,7 +26,9 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="1.0"
+        android:visibility="visible"
+        >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -73,7 +86,8 @@
                 android:textSize="@dimen/subtext_size"
                 app:layout_constraintEnd_toStartOf="@+id/guideline5"
                 app:layout_constraintStart_toStartOf="@+id/guideline"
-                app:layout_constraintTop_toBottomOf="@+id/tvMovieTitle" />
+                app:layout_constraintTop_toBottomOf="@+id/tvMovieTitle"
+                />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline"
@@ -86,18 +100,18 @@
                 android:id="@+id/cdPoster"
                 android:layout_width="110dp"
                 android:layout_height="180dp"
-                android:layout_marginTop="25dp"
                 app:cardCornerRadius="10dp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView5"
                 app:layout_constraintStart_toStartOf="@+id/guideline"
-                app:layout_constraintTop_toBottomOf="@+id/tvTagLine"
-                >
-            <ImageView
-                android:id="@+id/imPoster"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                tools:src="@drawable/sample_backdrop"
-                android:contentDescription="@string/poster" />
+                app:layout_constraintTop_toTopOf="@+id/textView5">
+
+                <ImageView
+                    android:id="@+id/imPoster"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/poster"
+                    android:scaleType="centerCrop"
+                    tools:src="@drawable/sample_backdrop" />
             </androidx.cardview.widget.CardView>
 
             <androidx.constraintlayout.widget.Guideline
@@ -111,7 +125,7 @@
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/pd_bold"
                 android:text="@string/release"
                 android:textColor="@color/app_text"
@@ -123,7 +137,7 @@
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="11dp"
+                android:layout_marginTop="10dp"
                 android:fontFamily="@font/pd_bold"
                 android:text="@string/duration"
                 android:textColor="@color/app_text"
@@ -135,7 +149,7 @@
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="11dp"
+                android:layout_marginTop="10dp"
                 android:fontFamily="@font/pd_bold"
                 android:text="Language:"
                 android:textColor="@color/app_text"
@@ -147,7 +161,7 @@
                 android:id="@+id/textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="11dp"
+                android:layout_marginTop="10dp"
                 android:fontFamily="@font/pd_bold"
                 android:text="Rating:"
                 android:textColor="@color/app_text"
@@ -159,7 +173,7 @@
                 android:id="@+id/textView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="11dp"
+                android:layout_marginTop="10dp"
                 android:fontFamily="@font/pd_bold"
                 android:text="Budget:"
                 android:textColor="@color/app_text"
@@ -168,15 +182,28 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
             <TextView
+                android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="11dp"
+                android:layout_marginTop="10dp"
                 android:fontFamily="@font/pd_bold"
                 android:text="@string/revenue"
                 android:textColor="@color/app_text"
                 android:textSize="@dimen/subtext_size"
                 app:layout_constraintStart_toStartOf="@+id/guideline2"
-                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+                app:layout_constraintTop_toBottomOf="@+id/textView6"/>
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/pd_bold"
+                android:text="@string/genre"
+                android:textColor="@color/app_text"
+                android:textSize="@dimen/subtext_size"
+                app:layout_constraintStart_toStartOf="@+id/guideline2"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline4"
@@ -189,7 +216,7 @@
                 android:id="@+id/tvReleaseDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/pd_bold"
                 tools:text="2019"
                 android:textColor="@color/colorPrimary"
@@ -201,7 +228,7 @@
                 android:id="@+id/tvDuration"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="11dp"
+                android:layout_marginTop="10dp"
                 android:fontFamily="@font/pd_bold"
                 tools:text="120mn"
                 android:textColor="@color/colorPrimary"
@@ -213,7 +240,7 @@
                 android:id="@+id/tvLanguage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="11dp"
+                android:layout_marginTop="10dp"
                 android:fontFamily="@font/pd_bold"
                 tools:text="En"
                 android:textColor="@color/colorPrimary"
@@ -225,7 +252,7 @@
                 android:id="@+id/tvRating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="11dp"
+                android:layout_marginTop="10dp"
                 android:fontFamily="@font/pd_bold"
                 tools:text="8"
                 android:textColor="@color/colorPrimary"
@@ -237,7 +264,7 @@
                 android:id="@+id/tvBudget"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="11dp"
+                android:layout_marginTop="10dp"
                 android:fontFamily="@font/pd_bold"
                 tools:text="20M"
                 android:textColor="@color/colorPrimary"
@@ -256,6 +283,18 @@
                 android:textSize="@dimen/subtext_size"
                 app:layout_constraintStart_toStartOf="@+id/guideline4"
                 app:layout_constraintTop_toBottomOf="@+id/tvBudget" />
+
+            <TextView
+                android:id="@+id/tvGenre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/pd_bold"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/subtext_size"
+                app:layout_constraintStart_toStartOf="@+id/guideline4"
+                app:layout_constraintTop_toBottomOf="@+id/tvAvenue"
+                tools:text="$475M" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"
@@ -296,16 +335,38 @@
                 />
 
             <TextView
-                android:id="@+id/textView13"
+                android:id="@+id/textViewProduction"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
+                android:fontFamily="@font/pd_bold"
+                android:text="@string/production_company"
+                android:textColor="@color/app_text"
+                android:textSize="@dimen/subtext_size"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/tvSynopsis" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginTop="10dp"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp"
+                android:id="@+id/rvProduction"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:clipToPadding="false"
+                app:layout_constraintTop_toBottomOf="@+id/textViewProduction" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/pd_bold"
                 android:text="@string/director"
                 android:textColor="@color/app_text"
                 android:textSize="@dimen/subtext_size"
                 app:layout_constraintStart_toStartOf="@+id/guideline"
-                app:layout_constraintTop_toBottomOf="@+id/tvSynopsis" />
+                app:layout_constraintTop_toBottomOf="@+id/rvProduction" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView2"

@@ -18,6 +18,5 @@ interface MovieApi {
     suspend fun getMovieDetail(
         @Path(value = "version", encoded = true) version : Int,
         @Path(value = "movie_id", encoded = false) movie_id: String,
-        @Query("api_key") apiKey: String
-    ) : Response<MovieDetail>
+        @Query("api_key") apiKey: String) : Response<MovieDetail>
 }
