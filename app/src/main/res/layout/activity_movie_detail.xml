@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/app_background"
-    tools:context=".MovieDetailActivity">
+    tools:context=".ui.MovieDetailActivity">
 
     <ProgressBar
         android:id="@+id/pbLoading"
@@ -20,20 +20,18 @@
     <ScrollView
         android:id="@+id/svMain"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="0dp"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        android:visibility="visible"
         >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            >
             <ImageView
                 android:id="@+id/ivBackDrop"
                 android:layout_width="match_parent"
@@ -43,8 +41,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:src="@drawable/sample_backdrop"
-                />
+                tools:src="@drawable/sample_backdrop" />
 
             <ImageView
                 android:layout_width="match_parent"
@@ -54,8 +51,7 @@
                 android:scaleType="centerCrop"
                 app:layout_constraintBottom_toBottomOf="@+id/ivBackDrop"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-/>
+                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/tvMovieTitle"
@@ -64,13 +60,13 @@
                 android:layout_marginTop="208dp"
                 android:fontFamily="@font/pd_bold"
                 android:gravity="center_horizontal"
-                tools:text="@string/title"
                 android:textColor="@color/app_text"
                 android:textSize="36sp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline5"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/guideline"
-                app:layout_constraintTop_toTopOf="@+id/ivBackDrop" />
+                app:layout_constraintTop_toTopOf="@+id/ivBackDrop"
+                tools:text="@string/title" />
 
             <TextView
                 android:id="@+id/tvTagLine"
@@ -86,8 +82,7 @@
                 android:textSize="@dimen/subtext_size"
                 app:layout_constraintEnd_toStartOf="@+id/guideline5"
                 app:layout_constraintStart_toStartOf="@+id/guideline"
-                app:layout_constraintTop_toBottomOf="@+id/tvMovieTitle"
-                />
+                app:layout_constraintTop_toBottomOf="@+id/tvMovieTitle" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline"
@@ -175,7 +170,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/pd_bold"
-                android:text="Budget:"
+                android:text="@string/budget"
                 android:textColor="@color/app_text"
                 android:textSize="@dimen/subtext_size"
                 app:layout_constraintStart_toStartOf="@+id/guideline2"
@@ -191,7 +186,7 @@
                 android:textColor="@color/app_text"
                 android:textSize="@dimen/subtext_size"
                 app:layout_constraintStart_toStartOf="@+id/guideline2"
-                app:layout_constraintTop_toBottomOf="@+id/textView6"/>
+                app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
             <TextView
                 android:id="@+id/textView7"
@@ -218,11 +213,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/pd_bold"
-                tools:text="2019"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/subtext_size"
                 app:layout_constraintStart_toStartOf="@+id/guideline4"
-                app:layout_constraintTop_toBottomOf="@+id/tvTagLine" />
+                app:layout_constraintTop_toBottomOf="@+id/tvTagLine"
+                tools:text="2019" />
 
             <TextView
                 android:id="@+id/tvDuration"
@@ -230,11 +225,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/pd_bold"
-                tools:text="120mn"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/subtext_size"
                 app:layout_constraintStart_toStartOf="@+id/guideline4"
-                app:layout_constraintTop_toBottomOf="@+id/tvReleaseDate" />
+                app:layout_constraintTop_toBottomOf="@+id/tvReleaseDate"
+                tools:text="120mn" />
 
             <TextView
                 android:id="@+id/tvLanguage"
@@ -242,11 +237,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/pd_bold"
-                tools:text="En"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/subtext_size"
                 app:layout_constraintStart_toStartOf="@+id/guideline4"
-                app:layout_constraintTop_toBottomOf="@+id/tvDuration" />
+                app:layout_constraintTop_toBottomOf="@+id/tvDuration"
+                tools:text="En" />
 
             <TextView
                 android:id="@+id/tvRating"
@@ -254,11 +249,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/pd_bold"
-                tools:text="8"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/subtext_size"
                 app:layout_constraintStart_toStartOf="@+id/guideline4"
-                app:layout_constraintTop_toBottomOf="@+id/tvLanguage" />
+                app:layout_constraintTop_toBottomOf="@+id/tvLanguage"
+                tools:text="8" />
 
             <TextView
                 android:id="@+id/tvBudget"
@@ -266,11 +261,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/pd_bold"
-                tools:text="20M"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/subtext_size"
                 app:layout_constraintStart_toStartOf="@+id/guideline4"
-                app:layout_constraintTop_toBottomOf="@+id/tvRating" />
+                app:layout_constraintTop_toBottomOf="@+id/tvRating"
+                tools:text="20M" />
 
             <TextView
                 android:id="@+id/tvAvenue"
@@ -278,11 +273,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/pd_bold"
-                tools:text="$475M"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/subtext_size"
                 app:layout_constraintStart_toStartOf="@+id/guideline4"
-                app:layout_constraintTop_toBottomOf="@+id/tvBudget" />
+                app:layout_constraintTop_toBottomOf="@+id/tvBudget"
+                tools:text="$475M" />
 
             <TextView
                 android:id="@+id/tvGenre"
@@ -296,17 +291,107 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvAvenue"
                 tools:text="$475M" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clOption"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cdPoster"
-                tools:itemCount="5"
-                tools:listitem="@layout/item_movie"
-                />
+                app:layout_constraintTop_toBottomOf="@+id/cdPoster">
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_like"
+                    android:padding="9dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:padding="9dp"
+                    android:src="@drawable/ic_rating"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+                    app:layout_constraintEnd_toStartOf="@+id/imageView4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/imageView4"
+                    />
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:padding="9dp"
+                    android:src="@drawable/ic_add"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageView4"
+                    app:layout_constraintTop_toTopOf="@+id/imageView4"
+                    />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pd_regular"
+                    android:text="@string/like"
+                    android:textColor="@color/app_text"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView4"
+                    app:layout_constraintStart_toStartOf="@+id/imageView4"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pd_regular"
+                    android:text="@string/add"
+                    android:textColor="@color/app_text"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView6"
+                    app:layout_constraintStart_toStartOf="@+id/imageView6"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rating"
+                    android:textColor="@color/app_text"
+                    android:fontFamily="@font/pd_regular"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView5"
+                    app:layout_constraintStart_toStartOf="@+id/imageView5"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+                <FrameLayout
+                    android:layout_width="0.5dp"
+                    android:layout_height="40dp"
+                    android:background="@color/app_color"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView10"
+                    app:layout_constraintEnd_toStartOf="@+id/imageView4"
+                    app:layout_constraintStart_toEndOf="@+id/imageView5"
+                    app:layout_constraintTop_toTopOf="@+id/imageView5">
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="0.5dp"
+                    android:layout_height="40dp"
+                    android:background="@color/app_color"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView8"
+                    app:layout_constraintEnd_toStartOf="@+id/imageView6"
+                    app:layout_constraintStart_toEndOf="@+id/imageView4"
+                    app:layout_constraintTop_toTopOf="@+id/imageView4">
+
+                </FrameLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
                 android:id="@+id/textView14"
@@ -316,8 +401,9 @@
                 android:text="@string/synopsis"
                 android:textColor="@color/app_text"
                 android:textSize="@dimen/subtext_size"
+                android:layout_marginTop="20dp"
                 app:layout_constraintStart_toStartOf="@+id/guideline"
-                app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+                app:layout_constraintTop_toBottomOf="@+id/clOption" />
 
             <TextView
                 android:id="@+id/tvSynopsis"
@@ -331,8 +417,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/guideline5"
                 app:layout_constraintStart_toStartOf="@+id/guideline"
                 app:layout_constraintTop_toBottomOf="@+id/textView14"
-                tools:text="@string/check_out_the_new_release_movie_today"
-                />
+                tools:text="@string/check_out_the_new_release_movie_today" />
 
             <TextView
                 android:id="@+id/textViewProduction"
@@ -347,13 +432,13 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvSynopsis" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:layout_marginTop="10dp"
-                android:paddingStart="18dp"
-                android:paddingEnd="18dp"
                 android:id="@+id/rvProduction"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
+                android:layout_marginTop="10dp"
                 android:clipToPadding="false"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp"
                 app:layout_constraintTop_toBottomOf="@+id/textViewProduction" />
 
             <TextView
@@ -365,6 +450,7 @@
                 android:text="@string/director"
                 android:textColor="@color/app_text"
                 android:textSize="@dimen/subtext_size"
+                android:visibility="gone"
                 app:layout_constraintStart_toStartOf="@+id/guideline"
                 app:layout_constraintTop_toBottomOf="@+id/rvProduction" />
 
@@ -372,12 +458,14 @@
                 android:id="@+id/recyclerView2"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
+                android:visibility="gone"
                 app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
             <TextView
                 android:id="@+id/lbCast"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/pd_bold"
                 android:text="@string/cast"
                 android:textColor="@color/app_text"
@@ -386,8 +474,13 @@
                 app:layout_constraintTop_toBottomOf="@+id/recyclerView2" />
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvCast"
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:clipToPadding="false"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/lbCast" />

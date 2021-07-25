@@ -4,26 +4,26 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".api.BackendVolley"
         android:icon="@mipmap/ic_launcher"
         android:label="${appName}"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/splash_screen_theme">
-        <activity android:name=".MovieDetailActivity">
+        android:theme="@style/splash_screen_theme"
+        android:allowBackup="true">
+        <activity android:name=".ui.MovieDetailActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
 
         <activity
-            android:name=".LoginActivity">
+            android:name=".ui.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
