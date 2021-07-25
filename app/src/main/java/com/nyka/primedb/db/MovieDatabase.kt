@@ -2,7 +2,7 @@ package com.nyka.primedb.db
 
 import android.content.Context
 import androidx.room.*
-import com.nyka.primedb.data.model.TrendingMovie
+import com.nyka.primedb.model.TrendingMovie
 
 @Database(
     entities = [TrendingMovie::class],

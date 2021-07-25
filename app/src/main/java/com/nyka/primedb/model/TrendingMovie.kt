@@ -1,4 +1,4 @@
-package com.nyka.primedb.data.model
+package com.nyka.primedb.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

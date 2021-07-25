@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.nyka.primedb.R
-import com.nyka.primedb.data.model.MovieDetail
+import com.nyka.primedb.model.MovieDetail
 import com.nyka.primedb.utils.Constants.Companion.posterPath
 
 class CastAdapter(private var movieDetail: MovieDetail) : RecyclerView.Adapter<CastAdapter.CastViewHolder>() {

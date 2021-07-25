@@ -2,8 +2,7 @@ package com.nyka.primedb.db
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.nyka.primedb.data.model.TrendingMovie
-import retrofit2.http.DELETE
+import com.nyka.primedb.model.TrendingMovie
 
 @Dao
 interface MovieDao {

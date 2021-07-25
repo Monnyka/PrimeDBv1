@@ -1,4 +1,4 @@
-package com.nyka.primedb.data.model
+package com.nyka.primedb.model
 
 data class Crew(
     val adult: Boolean,

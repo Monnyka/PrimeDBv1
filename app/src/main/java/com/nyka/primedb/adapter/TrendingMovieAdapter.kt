@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.nyka.primedb.R
-import com.nyka.primedb.data.model.TrendingMovie
+import com.nyka.primedb.model.TrendingMovie
 
 class TrendingMovieAdapter(private var trendingMovie: TrendingMovie) : RecyclerView.Adapter<TrendingMovieAdapter.TrendingMovieHolder>(){
 

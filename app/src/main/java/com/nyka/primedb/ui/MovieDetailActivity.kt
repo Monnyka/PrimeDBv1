@@ -11,7 +11,7 @@ import com.bumptech.glide.Glide
 import com.nyka.primedb.adapter.CastAdapter
 import com.nyka.primedb.adapter.ProductionAdapter
 import com.nyka.primedb.databinding.ActivityMovieDetailBinding
-import com.nyka.primedb.data.model.MovieDetail
+import com.nyka.primedb.model.MovieDetail
 import com.nyka.primedb.api.RetrofitInstance
 import com.nyka.primedb.utils.Constants.Companion.api_key
 import com.nyka.primedb.utils.Constants.Companion.posterPath

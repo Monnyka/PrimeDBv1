@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.nyka.primedb.R
-import com.nyka.primedb.data.model.TrendingMovie
+import com.nyka.primedb.model.TrendingMovie
 import com.nyka.primedb.utils.Constants.Companion.posterPath
 
 class MovieAdapter: RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {

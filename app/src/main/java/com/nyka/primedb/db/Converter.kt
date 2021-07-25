@@ -3,7 +3,7 @@ package com.nyka.primedb.db
 import androidx.room.TypeConverter
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.nyka.primedb.data.model.Result
+import com.nyka.primedb.model.Result
 
 
 class Converters {

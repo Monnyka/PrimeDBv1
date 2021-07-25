@@ -1,7 +1,7 @@
 package com.nyka.primedb.api
 
-import com.nyka.primedb.data.model.MovieDetail
-import com.nyka.primedb.data.model.TrendingMovie
+import com.nyka.primedb.model.MovieDetail
+import com.nyka.primedb.model.TrendingMovie
 import com.nyka.primedb.utils.Constants.Companion.api_key
 import retrofit2.Response
 import retrofit2.http.GET
