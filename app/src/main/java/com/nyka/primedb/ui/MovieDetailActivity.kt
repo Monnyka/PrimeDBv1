@@ -13,6 +13,7 @@ import com.nyka.primedb.adapter.ProductionAdapter
 import com.nyka.primedb.databinding.ActivityMovieDetailBinding
 import com.nyka.primedb.model.MovieDetail
 import com.nyka.primedb.api.RetrofitInstance
+import com.nyka.primedb.utils.Base
 import com.nyka.primedb.utils.Constants.Companion.api_key
 import com.nyka.primedb.utils.Constants.Companion.posterPath
 import retrofit2.HttpException
@@ -53,9 +54,10 @@ class MovieDetailActivity : AppCompatActivity(){
                         val tagLing = movieDetail.tagline
                         if(tagLing !=""){
                             tvTagLine.text = tagLing
-                        }else tvTagLine.visibility = View.GONE
+                        }else
+                            tvTagLine.visibility = View.GONE
 
-                        tvReleaseDate.text = dateFormatting(movieDetail.release_date)
+                        tvReleaseDate.text = Base().dateFormatting(movieDetail.release_date)
                         val duration = "${movieDetail.runtime} Minute"
                         tvDuration.text = duration
                         tvLanguage.text = movieDetail.spoken_languages[0].english_name
@@ -86,7 +88,6 @@ class MovieDetailActivity : AppCompatActivity(){
                         layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
                     }
 
-
                 } else {
                     println("Request not successful")
                 }
@@ -109,12 +110,6 @@ class MovieDetailActivity : AppCompatActivity(){
         } else {
             DecimalFormat().format(numValue)
         }
-    }
-
-    private fun dateFormatting(date: String): String {
-        val pattern = "dd MMMM, yyyy"
-        val simpleDateFormat = SimpleDateFormat(pattern)
-        return simpleDateFormat.format(Date())
     }
 
 }

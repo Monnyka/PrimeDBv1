@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.nyka.primedb.R
 import com.nyka.primedb.databinding.ActivityMainBinding
 import com.nyka.primedb.db.MovieDatabase
+import com.nyka.primedb.repository.MovieRepository
 import com.nyka.primedb.ui.fragment.MovieFragment
 import com.nyka.primedb.ui.fragment.NewsFragment
 import com.nyka.primedb.ui.fragment.SettingsFragment
@@ -23,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
 
-        val movieRepository = MovieDatabase(this)
+        val movieRepository = MovieRepository(MovieDatabase(this))
         val viewModelProviderFactory = MovieViewModelProviderFactory(movieRepository)
         viewModel = ViewModelProvider(this, viewModelProviderFactory).get(MovieViewModel::class.java)
 

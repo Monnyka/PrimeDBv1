@@ -12,7 +12,7 @@ interface MovieApi {
 
     @GET("/{version}/movie/popular")
     suspend fun getMovie(
-        @Path(value = "version", encoded = true) version : Int,
+        @Path(value = "version", encoded = true) version : Int = 3,
         @Query("api_key") apiKey: String = api_key): Response<TrendingMovie>
 
     @GET("/{version}/movie/{movie_id}")

@@ -10,8 +10,9 @@ import com.nyka.primedb.db.Converters
 )
 @TypeConverters(Converters::class)
 data class TrendingMovie(
+
     @PrimaryKey(autoGenerate = true)
-    val primary_id : Int?= null,
+    val id : Int?,
     val page: Int,
     val results: List<Result>,
     val total_pages: Int,
