@@ -211,72 +211,72 @@
                 android:id="@+id/tvReleaseDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:fontFamily="@font/pd_bold"
+                android:fontFamily="@font/pd_regular"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/subtext_size"
+                app:layout_constraintBottom_toBottomOf="@+id/textView2"
                 app:layout_constraintStart_toStartOf="@+id/guideline4"
-                app:layout_constraintTop_toBottomOf="@+id/tvTagLine"
+                app:layout_constraintTop_toTopOf="@+id/textView2"
                 tools:text="2019" />
 
             <TextView
                 android:id="@+id/tvDuration"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/pd_bold"
+                android:fontFamily="@font/pd_regular"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/subtext_size"
+                app:layout_constraintBottom_toBottomOf="@+id/textView3"
                 app:layout_constraintStart_toStartOf="@+id/guideline4"
-                app:layout_constraintTop_toBottomOf="@+id/tvReleaseDate"
+                app:layout_constraintTop_toTopOf="@+id/textView3"
                 tools:text="120mn" />
 
             <TextView
                 android:id="@+id/tvLanguage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/pd_bold"
+                android:fontFamily="@font/pd_regular"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/subtext_size"
+                app:layout_constraintBottom_toBottomOf="@+id/textView4"
                 app:layout_constraintStart_toStartOf="@+id/guideline4"
-                app:layout_constraintTop_toBottomOf="@+id/tvDuration"
+                app:layout_constraintTop_toTopOf="@+id/textView4"
                 tools:text="En" />
 
             <TextView
                 android:id="@+id/tvRating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/pd_bold"
+                android:fontFamily="@font/pd_regular"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/subtext_size"
+                app:layout_constraintBottom_toBottomOf="@+id/textView5"
                 app:layout_constraintStart_toStartOf="@+id/guideline4"
-                app:layout_constraintTop_toBottomOf="@+id/tvLanguage"
+                app:layout_constraintTop_toTopOf="@+id/textView5"
                 tools:text="8" />
 
             <TextView
                 android:id="@+id/tvBudget"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/pd_bold"
+                android:fontFamily="@font/pd_regular"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/subtext_size"
+                app:layout_constraintBottom_toBottomOf="@+id/textView6"
                 app:layout_constraintStart_toStartOf="@+id/guideline4"
-                app:layout_constraintTop_toBottomOf="@+id/tvRating"
+                app:layout_constraintTop_toTopOf="@+id/textView6"
                 tools:text="20M" />
 
             <TextView
                 android:id="@+id/tvAvenue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/pd_bold"
+                android:fontFamily="@font/pd_regular"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/subtext_size"
+                app:layout_constraintBottom_toBottomOf="@+id/textView"
                 app:layout_constraintStart_toStartOf="@+id/guideline4"
-                app:layout_constraintTop_toBottomOf="@+id/tvBudget"
+                app:layout_constraintTop_toTopOf="@+id/textView"
                 tools:text="$475M" />
 
             <TextView
@@ -284,9 +284,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:fontFamily="@font/pd_bold"
+                android:fontFamily="@font/pd_regular"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/subtext_size"
+                app:layout_constraintBottom_toBottomOf="@+id/textView7"
                 app:layout_constraintStart_toStartOf="@+id/guideline4"
                 app:layout_constraintTop_toBottomOf="@+id/tvAvenue"
                 tools:text="$475M" />
