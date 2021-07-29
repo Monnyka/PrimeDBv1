@@ -11,7 +11,7 @@ import retrofit2.http.Query
 interface MovieApi {
 
     @GET("/{version}/movie/popular")
-    suspend fun getMovie(
+    suspend fun getTrendingMovie(
         @Path(value = "version", encoded = true) version : Int = 3,
         @Query("api_key") apiKey: String = api_key): Response<TrendingMovie>
 

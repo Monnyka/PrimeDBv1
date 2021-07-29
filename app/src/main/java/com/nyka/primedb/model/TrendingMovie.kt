@@ -8,7 +8,6 @@ import com.nyka.primedb.db.Converters
 @Entity(
     tableName = "trendingMovie"
 )
-@TypeConverters(Converters::class)
 data class TrendingMovie(
 
     @PrimaryKey(autoGenerate = true)

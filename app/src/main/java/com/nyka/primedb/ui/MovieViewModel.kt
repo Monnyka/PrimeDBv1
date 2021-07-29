@@ -11,15 +11,16 @@ import kotlinx.coroutines.launch
 import retrofit2.Response
 
 class MovieViewModel(
-    private val movieRepository: MovieRepository
+    val movieRepository: MovieRepository
 ) : ViewModel() {
+
     val trendingMovie : MutableLiveData<Resource<TrendingMovie>> = MutableLiveData()
 
     init {
         getTrendingMovie()
     }
 
-    private fun getTrendingMovie()= viewModelScope.launch {
+    fun getTrendingMovie()= viewModelScope.launch {
         trendingMovie.postValue(Resource.Loading())
         val response = movieRepository.getTrendingMovie()
         trendingMovie.postValue(handleTrendingMovieResponse(response))
@@ -27,11 +28,12 @@ class MovieViewModel(
 
     private fun handleTrendingMovieResponse(response: Response<TrendingMovie>) : Resource<TrendingMovie> {
         if(response.isSuccessful){
-            response.body()?.let {
-                return Resource.Success(it)
+            response.body()?.let { resultResponse ->
+                return Resource.Success(resultResponse)
             }
         }
         return Resource.Error(response.message())
     }
+
 }
 

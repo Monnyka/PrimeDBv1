@@ -18,6 +18,7 @@ import com.nyka.primedb.ui.MovieDetailActivity
 import com.nyka.primedb.R
 import com.nyka.primedb.adapter.MovieAdapter
 import com.nyka.primedb.databinding.FragmentMovieBinding
+import com.nyka.primedb.model.Result
 import com.nyka.primedb.model.TrendingMovie
 import com.nyka.primedb.ui.MainActivity
 import com.nyka.primedb.ui.MovieViewModel
@@ -33,7 +34,6 @@ class MovieFragment:Fragment(R.layout.fragment_movie) {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         return inflater.inflate(R.layout.fragment_movie, container, false)
     }
 
@@ -49,16 +49,15 @@ class MovieFragment:Fragment(R.layout.fragment_movie) {
             layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
         }
 
-        viewModel.trendingMovie.observe(viewLifecycleOwner, Observer { response ->
-            when(response) {
+        viewModel.trendingMovie.observe(viewLifecycleOwner, Observer { it ->
+            when(it) {
                 is Resource.Success -> {
-                    response.data?.let {
-                        movieAdapter.differ.submitList(mutableListOf(it))
-                        println("$it fffffffffffffffffffff")
+                    it.data?.let {
+                        movieAdapter.differ.submitList(it.results)
                     }
                 }
                 is Resource.Error -> {
-                    response.message?.let { message ->
+                    it.message?.let { message ->
                         Log.e("dddddddddd", "An error occured: $message")
                     }
 
@@ -103,3 +102,4 @@ class MovieFragment:Fragment(R.layout.fragment_movie) {
 
     }
 }
+

@@ -7,5 +7,5 @@ class MovieRepository(
     val db: MovieDatabase
     ){
     suspend fun getTrendingMovie() =
-        RetrofitInstance.api.getMovie()
+        RetrofitInstance.api.getTrendingMovie()
 }
