@@ -6,15 +6,22 @@ import java.util.*
 class Base() {
 
     fun dateFormatting(date: String): String {
-        val pattern = "dd MMMM, yyyy"
-        val simpleDateFormat = SimpleDateFormat(pattern)
-        return simpleDateFormat.format(Date())
+        return if (date.isNullOrBlank()) {
+            ("N/A")
+        } else {
+            val pattern = "dd MMMM, yyyy"
+            val simpleDateFormat = SimpleDateFormat(pattern)
+            return simpleDateFormat.format(Date())
+        }
     }
 
-    fun yearFormatting(date: String): String {
-        val pattern = "yyyy"
-        val simpleDateFormat = SimpleDateFormat(pattern)
-        return simpleDateFormat.format(Date())
+    fun yearFormatting(date: String): String? {
+        return if (date.isNullOrBlank()) {
+            ("N/A")
+        } else {
+            val pattern = "yyyy"
+            val simpleDateFormat = SimpleDateFormat(pattern)
+            return simpleDateFormat.format(Date())
+        }
     }
-
 }

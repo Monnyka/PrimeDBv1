@@ -10,8 +10,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.nyka.primedb.R
-import com.nyka.primedb.model.Result
-import com.nyka.primedb.model.TrendingMovie
+import com.nyka.primedb.model.PopularResult
 import com.nyka.primedb.ui.MovieDetailActivity
 import com.nyka.primedb.utils.Base
 import com.nyka.primedb.utils.Constants.Companion.posterPath
@@ -19,12 +18,12 @@ import com.nyka.primedb.utils.Constants.Companion.posterPath
 class MovieAdapter: RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
     inner class MovieViewHolder(itemView : View): RecyclerView.ViewHolder(itemView)
 
-    private val differCallBack = object : DiffUtil.ItemCallback<Result>(){
-         override fun areItemsTheSame(oldItem: Result, newItem: Result): Boolean {
+    private val differCallBack = object : DiffUtil.ItemCallback<PopularResult>(){
+         override fun areItemsTheSame(oldItem: PopularResult, newItem: PopularResult): Boolean {
             return oldItem.id == newItem.id
         }
 
-        override fun areContentsTheSame(oldItem: Result, newItem: Result): Boolean {
+        override fun areContentsTheSame(oldItem: PopularResult, newItem: PopularResult): Boolean {
             return oldItem == newItem
         }
     }
@@ -46,7 +45,15 @@ class MovieAdapter: RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
             Glide.with(this).load(posterImage).into(findViewById(R.id.iv_poster))
         }
         holder.itemView.findViewById<TextView>(R.id.tv_title).text = movie.title
-        holder.itemView.findViewById<TextView>(R.id.tv_year).text = Base().yearFormatting(movie.release_date)
+        val date: String? = movie.release_date
+        holder.itemView.findViewById<TextView>(R.id.tv_year).text = date.let {
+            if (it != null) {
+                Base().yearFormatting(
+                    it
+                )
+            }
+        }.toString()
+
         holder.itemView.setOnClickListener(){
             Intent(holder.itemView.context, MovieDetailActivity::class.java).also {
                 it.putExtra("movie_id", movie.id)

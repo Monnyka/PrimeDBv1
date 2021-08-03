@@ -4,13 +4,13 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(
-    tableName = "trendingMovie"
+    tableName = "popularMovie"
 )
-data class TrendingMovie(
+data class PopularMovie(
     @PrimaryKey(autoGenerate = true)
     val id : Int?,
     val page: Int,
-    val results: List<TrendingMovieResult>,
+    val result: List<PopularResult>,
     val total_pages: Int,
     val total_results: Int
 )

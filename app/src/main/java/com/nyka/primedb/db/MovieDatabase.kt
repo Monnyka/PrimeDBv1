@@ -2,13 +2,14 @@ package com.nyka.primedb.db
 
 import android.content.Context
 import androidx.room.*
+import com.nyka.primedb.model.PopularMovie
 import com.nyka.primedb.model.TrendingMovie
 
 @Database(
-    entities = [TrendingMovie::class],
+    entities = [PopularMovie::class, TrendingMovie::class],
     version = 1
 )
-@TypeConverters(Converters::class)
+@TypeConverters(Converters::class, TrendingConverter::class)
 abstract class MovieDatabase : RoomDatabase() {
     abstract fun getMovieDao(): MovieDao
 

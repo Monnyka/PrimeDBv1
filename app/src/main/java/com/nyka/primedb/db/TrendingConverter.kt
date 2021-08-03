@@ -7,15 +7,15 @@ import com.nyka.primedb.model.PopularResult
 import com.nyka.primedb.model.TrendingMovieResult
 
 
-class Converters {
+class TrendingConverter {
     @TypeConverter
-    fun fromString(value: String): List<PopularResult> {
-        val listType = object : TypeToken<List<PopularResult>>() {}.type
+    fun fromString(value: String): List<TrendingMovieResult> {
+        val listType = object : TypeToken<List<TrendingMovieResult>>() {}.type
         return Gson().fromJson(value, listType)
     }
 
     @TypeConverter
-    fun fromListList(lists: List<PopularResult>): String {
+    fun fromListList(lists: List<TrendingMovieResult>): String {
         val gson = Gson()
         return gson.toJson(lists)
     }

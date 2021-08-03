@@ -4,11 +4,12 @@ import com.nyka.primedb.utils.Constants.Companion.baseUrl
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitInstance {
 
-    val retrofit by lazy {
+    private val retrofit: Retrofit by lazy {
         val logging = HttpLoggingInterceptor()
         logging.setLevel(HttpLoggingInterceptor.Level.BODY)
 
@@ -18,12 +19,13 @@ object RetrofitInstance {
 
         Retrofit.Builder()
             .baseUrl(baseUrl)
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()
     }
 
-    val api by lazy {
+    val api: MovieApi by lazy {
         retrofit.create(MovieApi::class.java)
     }
 }

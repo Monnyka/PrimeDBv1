@@ -47,6 +47,7 @@ class MovieDetailActivity : AppCompatActivity(){
                     Log.d(ContentValues.TAG, "HTTPException: Unexpected Response $e")
                     return@launchWhenCreated
                 }
+
                 if (response.isSuccessful && response.body() != null) {
                     val movieDetail: MovieDetail = response.body()!!
                     binding.apply {
