@@ -64,7 +64,7 @@ class MovieFragment:Fragment(R.layout.fragment_movie) {
                 is Resource.Error -> {
                     response.message?.let { message ->
                         Log.e(TAG, "An error occurred: $message")
-                        Snackbar.make(view, "Error", Snackbar.LENGTH_SHORT).show()
+                        Snackbar.make(view, message, Snackbar.LENGTH_SHORT).show()
                     }
                 }
                 is Resource.Loading -> {

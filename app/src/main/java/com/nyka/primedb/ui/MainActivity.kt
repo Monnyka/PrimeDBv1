@@ -7,6 +7,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.nyka.primedb.MovieApplication
 import com.nyka.primedb.R
 import com.nyka.primedb.databinding.ActivityMainBinding
 import com.nyka.primedb.db.MovieDatabase
@@ -25,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
 
         val movieRepository = MovieRepository(MovieDatabase(this))
-        val viewModelProviderFactory = MovieViewModelProviderFactory(movieRepository)
+        val viewModelProviderFactory = MovieViewModelProviderFactory(MovieApplication() ,movieRepository)
         viewModel = ViewModelProvider(this, viewModelProviderFactory).get(MovieViewModel::class.java)
 
         supportFragmentManager.beginTransaction().replace(R.id.fragment_container, MovieFragment()).commit()
