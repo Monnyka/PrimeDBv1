@@ -40,6 +40,12 @@ class MovieFragment:Fragment(R.layout.fragment_movie) {
         movieFragmentBinding = binding
         viewModel = (activity as MainActivity).viewModel
 
+        viewModel.getAllSavedTrendingMovie().observe(viewLifecycleOwner,{
+            if(it.isNotEmpty()){
+                trendingAdapter.differTrending.submitList(it[0].results)
+            }
+        })
+
 //        viewModel.getAllSavedPopularMovie().observe(viewLifecycleOwner, {
 //            if(it.isNotEmpty()) {
 //                popularAdapter.differ.submitList(it.first().popularResults)
@@ -58,7 +64,7 @@ class MovieFragment:Fragment(R.layout.fragment_movie) {
                 is Resource.Success ->{
                     response.data?.let {
                         trendingAdapter.differTrending.submitList(it.results)
-                        //viewModel.saveTrendingMovie(it)
+                        viewModel.saveTrendingMovie(it)
                     }
                 }
                 is Resource.Error -> {
@@ -90,8 +96,7 @@ class MovieFragment:Fragment(R.layout.fragment_movie) {
                 }
                 is Resource.Error -> {
                     responses.message?.let { message ->
-                        Log.e(TAG, "An error occurred: $message")
-                        Snackbar.make(view, "Error", Snackbar.LENGTH_SHORT).show()
+                        Snackbar.make(view, message, Snackbar.LENGTH_SHORT).show()
                     }
                 }
                 is Resource.Loading ->{

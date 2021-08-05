@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
 
         val movieRepository = MovieRepository(MovieDatabase(this))
-        val viewModelProviderFactory = MovieViewModelProviderFactory(MovieApplication() ,movieRepository)
+        val viewModelProviderFactory = MovieViewModelProviderFactory(application ,movieRepository)
         viewModel = ViewModelProvider(this, viewModelProviderFactory).get(MovieViewModel::class.java)
 
         supportFragmentManager.beginTransaction().replace(R.id.fragment_container, MovieFragment()).commit()

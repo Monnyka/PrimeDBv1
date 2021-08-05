@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
     tableName = "trendingMovie"
 )
 data class TrendingMovie(
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey
     val id : Int?,
     val page: Int,
     val results: List<TrendingMovieResult>,
