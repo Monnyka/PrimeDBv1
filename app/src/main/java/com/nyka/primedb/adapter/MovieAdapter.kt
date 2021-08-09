@@ -45,15 +45,9 @@ class MovieAdapter: RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
             Glide.with(this).load(posterImage).into(findViewById(R.id.iv_poster))
         }
         holder.itemView.findViewById<TextView>(R.id.tv_title).text = movie.title
-        val date: String? = movie.release_date
+        val date: String = movie.release_date
         holder.itemView.findViewById<TextView>(R.id.tv_year).text = date.let {
-            if (it != null) {
-                Base().yearFormatting(
-                    it
-                )
-            }
-        }.toString()
-
+            Base().yearFormatting(it)}.toString()
         holder.itemView.setOnClickListener(){
             Intent(holder.itemView.context, MovieDetailActivity::class.java).also {
                 it.putExtra("movie_id", movie.id)

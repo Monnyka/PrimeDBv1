@@ -10,7 +10,7 @@ data class PopularMovie(
     @PrimaryKey(autoGenerate = true)
     val id : Int?,
     val page: Int,
-    val result: List<PopularResult>,
+    val results: List<PopularResult>,
     val total_pages: Int,
     val total_results: Int
 )

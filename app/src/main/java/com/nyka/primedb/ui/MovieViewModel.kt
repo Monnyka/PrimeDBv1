@@ -27,7 +27,7 @@ class MovieViewModel(
     val trendingMovie: MutableLiveData<Resource<TrendingMovie>> = MutableLiveData()
 
     init {
-//        getPopularMovie()
+        getPopularMovie()
         getTrendingMovie()
     }
 
@@ -35,11 +35,9 @@ class MovieViewModel(
         safeTrendingMovieCall()
     }
 
-//    private fun getPopularMovie()= viewModelScope.launch {
-//        popularMovie.postValue(Resource.Loading())
-//        val response = movieRepository.getPopularMovie()
-//        popularMovie.postValue(handleGetPopularMovieResponse(response))
-//    }
+    private fun getPopularMovie()= viewModelScope.launch {
+        safePopularMovieCall()
+    }
 
     private fun handleGetTrendingMovieResponse(response: Response<TrendingMovie>): Resource<TrendingMovie>{
         if (response.isSuccessful){
@@ -59,10 +57,10 @@ class MovieViewModel(
         return Resource.Error(response.message())
     }
 
-//    fun savePopularMovie(popularMovie: PopularMovie) = viewModelScope.launch {
-//        movieRepository.upsertPopular(popularMovie)
-//    }
-//
+    fun savePopularMovie(popularMovie: PopularMovie) = viewModelScope.launch {
+        movieRepository.upsertPopular(popularMovie)
+    }
+
 //    fun getAllSavedPopularMovie() = movieRepository.getSavedPopularMovie()
 //
     fun getAllSavedTrendingMovie() = movieRepository.getSavedTrendingMovie()
@@ -87,6 +85,29 @@ class MovieViewModel(
             }
         }
     }
+
+    private suspend fun safePopularMovieCall(){
+        popularMovie.postValue(Resource.Loading())
+        try {
+            if(hasInternetConnection()){
+                val response = movieRepository.getPopularMovie()
+                popularMovie.postValue(handleGetPopularMovieResponse(response))
+            }else{
+                popularMovie.postValue(Resource.Error("There is no internet connection."))
+            }
+        }catch (t: Throwable){
+            when(t){
+                is IOException -> popularMovie.postValue(Resource.Error("Network Error"))
+                else -> popularMovie.postValue(Resource.Error("Conversion Error"))
+            }
+        }
+
+    }
+
+
+
+
+
 
     private fun hasInternetConnection(): Boolean {
         val connectivityManager = getApplication<MovieApplication>().getSystemService(

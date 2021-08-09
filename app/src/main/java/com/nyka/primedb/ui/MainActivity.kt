@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNavigation.setOnNavigationItemSelectedListener{
             when(it.itemId){
                 R.id.nav_movie -> makeFragment(movieFragment)
-                R.id.nav_tv -> makeFragment(tvShowFragment)
+//                R.id.nav_tv -> makeFragment(tvShowFragment)
                 R.id.nav_news -> makeFragment(newsFragment)
                 R.id.nav_settings -> makeFragment(settingsFragment)
             }

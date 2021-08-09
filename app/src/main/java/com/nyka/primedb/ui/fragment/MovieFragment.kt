@@ -16,15 +16,16 @@ import com.nyka.primedb.R
 import com.nyka.primedb.adapter.MovieAdapter
 import com.nyka.primedb.adapter.TrendingMovieAdapter
 import com.nyka.primedb.databinding.FragmentMovieBinding
+import com.nyka.primedb.model.TrendingMovie
 import com.nyka.primedb.ui.MainActivity
 import com.nyka.primedb.ui.MovieViewModel
 import com.nyka.primedb.utils.Resource
 
 class MovieFragment:Fragment(R.layout.fragment_movie) {
     private var movieFragmentBinding: FragmentMovieBinding? = null
-    lateinit var viewModel: MovieViewModel
-    lateinit var popularAdapter: MovieAdapter
-    lateinit var trendingAdapter : TrendingMovieAdapter
+    private lateinit var viewModel: MovieViewModel
+    private lateinit var popularAdapter: MovieAdapter
+    private lateinit var trendingAdapter : TrendingMovieAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,12 +40,6 @@ class MovieFragment:Fragment(R.layout.fragment_movie) {
         val binding = FragmentMovieBinding.bind(view)
         movieFragmentBinding = binding
         viewModel = (activity as MainActivity).viewModel
-
-        viewModel.getAllSavedTrendingMovie().observe(viewLifecycleOwner,{
-            if(it.isNotEmpty()){
-                trendingAdapter.differTrending.submitList(it[0].results)
-            }
-        })
 
 //        viewModel.getAllSavedPopularMovie().observe(viewLifecycleOwner, {
 //            if(it.isNotEmpty()) {
@@ -61,7 +56,7 @@ class MovieFragment:Fragment(R.layout.fragment_movie) {
 
         viewModel.trendingMovie.observe(viewLifecycleOwner, Observer{ response ->
             when(response){
-                is Resource.Success ->{
+                is Resource.Success -> {
                     response.data?.let {
                         trendingAdapter.differTrending.submitList(it.results)
                         viewModel.saveTrendingMovie(it)
@@ -71,6 +66,11 @@ class MovieFragment:Fragment(R.layout.fragment_movie) {
                     response.message?.let { message ->
                         Log.e(TAG, "An error occurred: $message")
                         Snackbar.make(view, message, Snackbar.LENGTH_SHORT).show()
+                        viewModel.getAllSavedTrendingMovie().observe(viewLifecycleOwner,{
+                            if(it.isNotEmpty()){
+                                trendingAdapter.differTrending.submitList(it[it.lastIndex].results)
+                            }
+                        })
                     }
                 }
                 is Resource.Loading -> {
@@ -84,13 +84,13 @@ class MovieFragment:Fragment(R.layout.fragment_movie) {
             adapter = popularAdapter
             layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
         }
-
-        viewModel.popularMovie.observe(viewLifecycleOwner, { responses ->
+        viewModel.popularMovie.observe(viewLifecycleOwner, Observer{ responses ->
             when(responses) {
                 is Resource.Success -> {
                     responses.data?.let {
-                        popularAdapter.differ.submitList(it.result)
-                        //viewModel.savePopularMovie(it)
+                        popularAdapter.differ.submitList(it.results)
+                        println("ssssssssssssssssssssssss $it")
+//                        viewModel.savePopularMovie(it)
                         Snackbar.make(view, "Successful get the movie...", Snackbar.LENGTH_SHORT).show()
                     }
                 }

@@ -11,12 +11,12 @@ import retrofit2.http.Query
 
 interface MovieApi {
 
-    @GET("/{version}/movie/popular")
+    @GET("{version}/movie/popular")
     suspend fun getPopularMovie(
         @Path(value = "version", encoded = true) version : Int = 3,
         @Query("api_key") apiKey: String = api_key): Response<PopularMovie>
 
-    @GET("/{version}/movie/{movie_id}")
+    @GET("{version}/movie/{movie_id}")
     suspend fun getMovieDetail(
         @Path(value = "version", encoded = true) version : Int,
         @Path(value = "movie_id", encoded = false) movie_id: String,
