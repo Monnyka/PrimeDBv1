@@ -8,25 +8,26 @@
     <application
         android:name=".MovieApplication"
         android:icon="@mipmap/ic_launcher"
-        android:label="${appName}"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
+        android:label="$appName"
         android:theme="@style/splash_screen_theme"
-        android:allowBackup="true">
-        <activity android:name=".ui.MovieDetailActivity">
+        >
+        <activity android:name=".ui.MovieDetailActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
 
         <activity
-            android:name=".ui.LoginActivity">
+            android:name=".ui.LoginActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.MainActivity">
+        <activity android:name=".ui.MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
