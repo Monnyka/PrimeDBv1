@@ -11,6 +11,6 @@
 <!--        android:startColor="#1a2b5d"-->
 <!--        android:type="linear" />-->
     <solid
-        android:color="@color/colorPanel" />
+        android:color="@color/md_theme_dark_surfaceTintColor" />
 
 </shape>

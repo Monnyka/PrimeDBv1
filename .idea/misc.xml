@@ -8,6 +8,13 @@
         <entry key="..\:/Users/User/Desktop/Project/PrimeDB/app/src/main/res/drawable/ic_drama.xml" value="0.10810810810810811" />
         <entry key="..\:/Users/User/Desktop/Project/PrimeDB/app/src/main/res/layout/fragment_movie.xml" value="0.17" />
         <entry key="..\:/Users/User/Desktop/Project/PrimeDB/app/src/main/res/menu/nav_drawer_menu.xml" value="0.23783783783783785" />
+        <entry key="app/src/main/res/drawable/bg_gradiant_up.xml" value="0.1235" />
+        <entry key="app/src/main/res/drawable/bg_panel_view.xml" value="0.1235" />
+        <entry key="app/src/main/res/drawable/splash_image.xml" value="0.1235" />
+        <entry key="app/src/main/res/drawable/tab_color.xml" value="0.1235" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_movie_detail.xml" value="0.2390625" />
+        <entry key="app/src/main/res/menu/bottom_navigate.xml" value="0.22407407407407406" />
       </map>
     </option>
   </component>

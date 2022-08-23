@@ -8,8 +8,8 @@
     <application
         android:name=".MovieApplication"
         android:icon="@mipmap/ic_launcher"
-        android:label="$appName"
-        android:theme="@style/splash_screen_theme"
+        android:label="PrimeDB"
+        android:theme="@style/Theme.Material3.Light.NoActionBar"
         >
         <activity android:name=".ui.MovieDetailActivity"
             android:exported="true">
